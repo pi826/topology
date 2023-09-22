@@ -101,7 +101,7 @@ pdfkeywords={}
     \end{alignedat} 
     \right.
   \end{equation*}
-  で与えれる。\\
+  で与えられる。\\
   上の同値類を連続写像の\textgt{ホモトピー類}(えいやくだれか教えて)という。\\
   明らかに$f\simeq f':X\to Y$で$g\simeq g':Y\to Z$ならば\\
   \begin{equation*}
@@ -167,8 +167,18 @@ pdfkeywords={}
     \partial_{q} \circ \varphi_{q} = \varphi_{q-1} \circ \partial_{q}
   \end{equation*}
   の成り立つものがチェイン写像である。\\
-  チェイン複体の恒等写像はチェイン写像
+  チェイン複体の恒等写像(恒等射)はチェイン写像であり($\partial\varphi = \varphi\partial$で次数$0$だから)\\
+  チェイン写像の合成はチェイン写像である。(確かめること)\\
+  よって、チェイン複体を対象とし、射をチェイン写像とすることにより、1つの圏を得る。
+\end{tcolorbox}
 
+\begin{tcolorbox}[title = 例4]
+  チェイン写像$\varphi,\varphi':C\to C'$に対し、次数$+1$の準同型写像$\Phi : C\to C'$があって、
+  \begin{equation*}
+    \partial \circ \Phi + \Phi \circ \partial = \varphi - \varphi'
+  \end{equation*}
+  が成り立つとき、$\varphi$は$\varphi'$への\textgt{チェインホモトープ}であるといい、$\varphi \simeq \varphi' : C\to C'$で表す。
+  $\Phi$を$\varphi$の$\varphi'$への\textgt{チェインホモトピー}という。
 \end{tcolorbox}
 
 
