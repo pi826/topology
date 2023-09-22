@@ -70,6 +70,7 @@ pdfkeywords={}
 \author{Fefr}
 \maketitle
 \tableofcontents
+\clearpage
 
 %--------------------本文--------------------%
 
@@ -85,7 +86,29 @@ pdfkeywords={}
     F(x,t)=f_{i}(x)\qquad (x\in X,t \in [0,1])
   \end{equation*}
   で定義するとき、$F$が連続ならば写像族$\{f_i\}$を$f_0$から$f_1$への\textgt{ホモトピー}(homotopy)という。\\
-  連続写像$f,f':X\to Y$
+  連続写像$f,f':X\to Y$に対し、$f$から$f'$へのホモトピーが存在するとき$f$は$f'$に\textgt{ホモトープ}(homotop)
+  であるといい、$f\simeq f':X\to Y$で表す。\\
+  ホモトープという関係は同値関係となる。\\
+  実際、反射律は$f\simeq f:X\to Y$は$f_{t}=f$とすることにより、対称律は$f\simeq f':X\to Y$とすると、
+  $f'$の$f$へのホモトピー$\{f'_{t}\}$は$f$の$f'$へのホモトピー$\{f_{t}\}$を用いて$f'_{t}=f_{1-t}$で与えられる。
+  推移律は、$f\simeq f',f'\simeq f'':X\to Y$ならば$f$の$f''$へのホモトピー$\{h_{t}\}$が
+  $f$から$f'$へのホモトピー$\{f_{t}\}$、$f'$から$f''$へのホモトピー$\{g_{t}\}$を用いて
+  \begin{equation*}
+    h_{t}=\left\{ 
+    \begin{alignedat}{2}   
+      &f_{2t}  \quad &(0\leq t\leq 1/2)\\   
+      &g_{2t-1}\quad &(1/2\leq t\leq 1)
+    \end{alignedat} 
+    \right.
+  \end{equation*}
+  で与えれる。\\
+  上の同値類を連続写像の\textgt{ホモトピー類}(えいやくだれか教えて)という。\\
+  明らかに$f\simeq f':X\to Y$で$g\simeq g':Y\to Z$ならば\\
+  \begin{equation*}
+    g\circ f\simeq g\circ f'\simeq g'\circ f':X \to Z
+  \end{equation*}
+  である。すなわち、ホモトープな連続写像の合成はホモトープである。\\
+  よって、対象を位相空間とし、射を連続者像のホモトピー類で定義することにより、1つの圏が得られる。
 \end{tcolorbox}
 
 
