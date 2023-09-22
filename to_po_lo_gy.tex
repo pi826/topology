@@ -6,8 +6,9 @@
 \usepackage{bm}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{tcolorbox}
 % 画像
-\usepackage[dvipdfmx]{graphicx,color}
+% \usepackage[dvipdfmx]{graphicx,color}
 
 \usepackage[%
 dvipdfmx, %欧文ではコメントアウトする
@@ -69,6 +70,21 @@ pdfkeywords={}
 \author{Fefr}
 \maketitle
 
+%--------------------本文--------------------%
+
+\section{位相空間の(コ)ホモロジー}
+
+\subsection{圏と関手}
+
+圏の定義は略。\\
+圏の例をすこしあげる。
+\begin{tcolorbox}[title = 例1]
+  位相空間$X$から位相空間$Y$への写像の族$f_{i}:X\to Y$に対し、写像$F:X\times [0,1] \to Y$を
+  \begin{equation*}
+    F(x,t)=f_{i}(x)\qquad (x\in X,t \in [0,1])
+  \end{equation*}
+  で定義するとき、$F$が連続ならば写像族${f_i}$を$f_0$から$f_1$
+\end{tcolorbox}
 
 
 \end{document}
