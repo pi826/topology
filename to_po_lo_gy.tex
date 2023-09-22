@@ -105,11 +105,31 @@ pdfkeywords={}
   上の同値類を連続写像の\textgt{ホモトピー類}(えいやくだれか教えて)という。\\
   明らかに$f\simeq f':X\to Y$で$g\simeq g':Y\to Z$ならば\\
   \begin{equation*}
-    g\circ f\simeq g\circ f'\simeq g'\circ f':X \to Z
+    g\circ f\simeq g\circ f'\simeq g'\circ f'\simeq g'\circ f:X \to Z
   \end{equation*}
-  である。すなわち、ホモトープな連続写像の合成はホモトープである。\\
+  である。($\{g\circ f_{t}\}$が$g\circ f$から$g\circ f'$へのホモトピーを与え、$\{g_{t}\circ f'\}$が$g\circ f'$から$g'\circ f'$へのホモトピーを与える。)\\
+  すなわち、ホモトープな連続写像の合成はホモトープである。\\
   よって、対象を位相空間とし、射を連続者像のホモトピー類で定義することにより、1つの圏が得られる。
 \end{tcolorbox}
 
+\clearpage
 
+加群,加群の準同型写像の定義は略。$R$加群、$R$準同型写像を単に加群、準同型写像という。
+簡単のため$R$を可換環と仮定する。可換性が必要がない場面もある。
+\begin{tcolorbox}[title = 例2]
+  整数の集合$\mathbf{Z}$を添字集合とする$R$上の加群の族$C=\{C_{q}\}$を$R$上の\textgt{次数つき加群}(graded module)
+  といい、$C_{q}$の元$c$を$C$の\textgt{次数$q$の元}といって、$q=\text{deg}\ c$と書く。$C,C'$を次数つき加群とし、
+  $d$を1つの整数とする。このとき$\mathbf{Z}$を添字集合とする準同型写像$\varphi_{q}:C_{q} \to C_{q+d}$の族$\varphi = \{\varphi_{q}\}$を
+  $C$から$C'$への\textgt{次数$d$の準同型写像}といい、$\varphi : C\to C'$で表す。\\
+  $C''$も加群とし、$\varphi' : C'\to C''$を次数$d'$の準同型写像とするとき、次数$d+d'$の準同型写像$\varphi' \circ \varphi : C\to C''$を
+  \begin{equation*}
+    (\varphi' \circ \varphi)_{q} = \varphi'_{q} \circ \varphi_{q}
+  \end{equation*} 
+  で定義し、$\varphi$と$\varphi'$の合成という。
+  いま、次の二つの圏が得られる。
+  \begin{itemize}
+    \item 次数つき加群を対象とし、任意の次数の準同型写像を射とする圏
+    \item 次数つき加群を対象とし、次数$0$の準同型写像を射とする圏
+  \end{itemize}
+\end{tcolorbox}
 \end{document}
