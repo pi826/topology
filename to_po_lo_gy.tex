@@ -123,7 +123,7 @@ pdfkeywords={}
   $C$から$C'$への\textgt{次数$d$の準同型写像}といい、$\varphi : C\to C'$で表す。\\
   $C''$も加群とし、$\varphi' : C'\to C''$を次数$d'$の準同型写像とするとき、次数$d+d'$の準同型写像$\varphi' \circ \varphi : C\to C''$を
   \begin{equation*}
-    (\varphi' \circ \varphi)_{q} = \varphi'_{q} \circ \varphi_{q}
+    (\varphi' \circ \varphi)_{q} = \varphi'_{d+q} \circ \varphi_{q}
   \end{equation*} 
   で定義し、$\varphi$と$\varphi'$の合成という。
   いま、次の二つの圏が得られる。
@@ -132,4 +132,45 @@ pdfkeywords={}
     \item 次数つき加群を対象とし、次数$0$の準同型写像を射とする圏
   \end{itemize}
 \end{tcolorbox}
+
+\begin{tcolorbox}[title = 例3]
+  $R$上の次数つき加群$C$において、次数$-1$の準同型写像$\partial : C\to C$で
+  \begin{equation*}
+    \partial \circ \partial = 0
+  \end{equation*}
+  を満たすものが与えられたとき、$(C,\partial)$を\textgt{$R$上のチェイン複体}(chain complex)という。
+  チェイン複体は加群$C_{q}$と準同型写像$\partial_{q}:C_{q}\to C_{q-1}$の列
+  \begin{center}
+    \begin{tikzpicture}[auto]
+      \node (a) at (0, 1.2) {$\cdots$}; \node (b) at (2.0, 1.2) {$C_{q+1}$};
+      \node (c) at (4.0, 1.2) {$C_{q}$}; \node (d) at (6.0, 1.2) {$C_{q-1}$};
+      \node (e) at (8.0, 1.2) {$C_{q-2}$}; \node (f) at (10.0, 1.2) {$\cdots$};
+      
+      \draw[->] (a) to node {} (b); \draw[->] (b) to node {$\partial_{q+1}$} (c);
+      \draw[->] (c) to node {$\partial_{q}$} (d); \draw[->] (d) to node {$\partial_{q-1}$} (e);
+      \draw[->] (e) to node {} (f);
+    \end{tikzpicture}
+  \end{center}
+  で、各$q$に対し
+  \begin{equation*}
+    \partial_{q-1} \circ \partial_{q} = 0
+  \end{equation*}
+  の成り立つもの、と言い換えることができる。$\partial = \{\partial_{q}\}$を\textgt{バウンダリ作用素}(えいやくd(((()という。
+  チェイン複体$(C,\partial)$を単に$C$で表す。\\
+  $C,C'$をチェイン複体とするとき、次数$0$の準同型写像$\varphi : C\to C'$で、$C,C'$のバウンダリ作用素$\partial$に対し
+  \begin{equation*}
+    \partial \circ \varphi = \varphi \circ \partial
+  \end{equation*}
+  を満たすものを\textgt{チェイン写像}(chain map)という。すなわち、準同型写像$\varphi_{q} : C_{q} \to C'_{q}$の族
+  $\varphi = \{\varphi_{q}\}$で、各$q$に対し
+  \begin{equation*}
+    \partial_{q} \circ \varphi_{q} = \varphi_{q-1} \circ \partial_{q}
+  \end{equation*}
+  の成り立つものがチェイン写像である。\\
+  チェイン複体の恒等写像はチェイン写像
+
+\end{tcolorbox}
+
+
+
 \end{document}
