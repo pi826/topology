@@ -155,7 +155,7 @@ pdfkeywords={}
   \begin{equation*}
     \partial_{q-1} \circ \partial_{q} = 0
   \end{equation*}
-  の成り立つもの、と言い換えることができる。$\partial = \{\partial_{q}\}$を\textgt{バウンダリ作用素}(えいやくd(((()という。
+  の成り立つもの、と言い換えることができる。$\partial = \{\partial_{q}\}$を\textgt{バウンダリ作用素}(boundary operator)という。
   チェイン複体$(C,\partial)$を単に$C$で表す。\\
   $C,C'$をチェイン複体とするとき、次数$0$の準同型写像$\varphi : C\to C'$で、$C,C'$のバウンダリ作用素$\partial$に対し
   \begin{equation*}
@@ -178,7 +178,38 @@ pdfkeywords={}
     \partial \circ \Phi + \Phi \circ \partial = \varphi - \varphi'
   \end{equation*}
   が成り立つとき、$\varphi$は$\varphi'$への\textgt{チェインホモトープ}であるといい、$\varphi \simeq \varphi' : C\to C'$で表す。
-  $\Phi$を$\varphi$の$\varphi'$への\textgt{チェインホモトピー}という。
+  $\Phi$を$\varphi$の$\varphi'$への\textgt{チェインホモトピー}という。\\
+  チェインホモトープという関係は$C$から$C'$へのチェイン写像の集合における同値関係である。(あとで証明を追加したい。)
+  この同値類を\textgt{チェインホモトピー類}という。\\
+  $\varphi\simeq \varphi' : C\to C'$で$\psi \simeq \psi' :C' \to C''$ならば、$\psi \circ \varphi \simeq \psi' \circ \varphi' : C\to C''$
+  である。実際、$\Phi$を$\varphi$から$\varphi'$への、$\Psi$を$\psi$から$\psi'$へのチェインホモトピーとするとき
+  \begin{equation*}
+    \psi'\circ \Phi + \Psi \circ \varphi : C\to C''
+  \end{equation*}
+  は$\psi \circ \varphi$から$\psi'\circ \varphi'$へのチェインホモトピーである。\\
+  よって、チェイン複体を対象とし、チェイン写像のチェインホモトピー類を射とすることにより、1つの圏が得られる。
+\end{tcolorbox}
+同型射、同型、関手の定義は略。例1の圏における同型射、同型はふつう\textgt{ホモトピー同値写像}、\textgt{ホモトピー同値}とよばれている。\\
+例4での同型射を\textgt{チェイン同値写像}という。
+\begin{tcolorbox}[title = 例5]
+  $C$をチェイン複体とする。
+  \begin{equation*}
+    Z_{q}(C)=\text{Ker}\, \partial_{q},\qquad B_{q}(C)=\text{Im}\, \partial_{q+1}
+  \end{equation*}
+  とおけば、$\partial_{q}\circ \partial_{q+1} = 0$だから、$B_{q}(C)\subset Z_{q}(C)$である。商加群
+  \begin{equation*}
+    H_{q}(C)=Z_{q}(C)/B_{q}(C)
+  \end{equation*}
+  を$C$の\textgt{$q$ホモロジー群}といい、次数つき加群$H_{*}(C)=\{H_{q}(C)\}$を$C$の\textgt{ホモロジー群}という。
+  $C_q$の元を$C$の\textgt{$q$チェイン}。$Z_{q}(C)$の元を\textgt{$q$サイクル}。$B_{q}(C)$の元を\textgt{$q$バウンダリ}といい、
+  $c\in Z_{q}(C)$で代表される$H_{q}(C)$の元を$[c]$で表して、$c$の\textgt{ホモロジー類}という。\\
+  チェイン写像$\varphi : C\to C'$は$C$の$q$サイクル、$q$バウンダリを$C'$のそれらにうつす。したがって次数$0$の準同型写像$H_{*}(q) : H_{*}(C)\to H_{*}(C')$が
+  \begin{equation*}
+    H_{*}(\varphi)([c])=[\varphi(c)]\qquad (c\in Z_{q}(C))
+  \end{equation*}
+  により定義される。$H_{*}(\varphi)$を$\varphi$により\textgt{誘導される準同型写像}といい、しばしば$\varphi_{*}$でかく。
+  明らかに、$H_{*}(1)=1,H_{*}(\varphi \circ \varphi')=H_{*}(\varphi)\circ H_{*}(\varphi')$である。したがって$H_{*}$はチェイン複体とチェイン写像の圏(例3)から次数つき加群と次数$0$の準同型写像の圏(例2(2))への共変関手である。
+  $H_{*}$を\textgt{ホモロジー函手}という。
 \end{tcolorbox}
 
 
