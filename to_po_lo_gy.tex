@@ -169,17 +169,17 @@ pdfkeywords={}
   \end{equation*}
   の成り立つもの、と言い換えることができる。$\partial = \{\partial_{q}\}$を\textgt{バウンダリ作用素}(boundary operator)という。
   チェイン複体$(C,\partial)$を単に$C$で表す。\\
-  $C,C'$をチェイン複体とするとき、次数$0$の準同型写像$\varphi : C\to C'$で、$C,C'$のバウンダリ作用素$\partial$に対し
+  $C,C'$をチェイン複体とするとき、次数$0$の準同型写像$\varphi : C\to C'$で、$C,C'$のバウンダリ作用素$\partial,\partial'$に対し
   \begin{equation*}
-    \partial \circ \varphi = \varphi \circ \partial
+    \partial' \circ \varphi = \varphi \circ \partial
   \end{equation*}
   を満たすものを\textgt{チェイン写像}(chain map)という。すなわち、準同型写像$\varphi_{q} : C_{q} \to C'_{q}$の族
   $\varphi = \{\varphi_{q}\}$で、各$q$に対し
   \begin{equation*}
-    \partial_{q} \circ \varphi_{q} = \varphi_{q-1} \circ \partial_{q}
+    \partial_{q}' \circ \varphi_{q} = \varphi_{q-1} \circ \partial_{q}
   \end{equation*}
   の成り立つものがチェイン写像である。\\
-  チェイン複体の恒等写像(恒等射)はチェイン写像であり($\partial\varphi = \varphi\partial$で次数$0$だから)\\
+  チェイン複体の恒等写像(恒等射)はチェイン写像であり($\partial'\varphi = \varphi\partial$で次数$0$だから)\\
   チェイン写像の合成はチェイン写像である。(確かめること)\\
   よって、チェイン複体を対象とし、射をチェイン写像とすることにより、1つの圏を得る。
 \end{tcolorbox}
@@ -215,7 +215,18 @@ pdfkeywords={}
   を$C$の\textgt{$q$ホモロジー群}といい、次数つき加群$H_{*}(C)=\{H_{q}(C)\}$を$C$の\textgt{ホモロジー群}という。
   $C_q$の元を$C$の\textgt{$q$チェイン}。$Z_{q}(C)$の元を\textgt{$q$サイクル}。$B_{q}(C)$の元を\textgt{$q$バウンダリ}といい、
   $c\in Z_{q}(C)$で代表される$H_{q}(C)$の元を$[c]$で表して、$c$の\textgt{ホモロジー類}という。\\
-  チェイン写像$\varphi : C\to C'$は$C$の$q$サイクル、$q$バウンダリを$C'$のそれらにうつす。したがって次数$0$の準同型写像$H_{*}(q) : H_{*}(C)\to H_{*}(C')$が
+  チェイン写像$\varphi : C\to C'$は$C$の$q$サイクル、$q$バウンダリを$C'$の$q$サイクル、$q$バウンダリに移す。
+  実際、$c\in Z_{q}(C)=\text{Ker}\, \partial_{q}$をとると、$\partial_{q}(c)=0$だから
+  \begin{equation*}
+    \partial_{q}'(\varphi(c))=(\partial'_{q} \circ \varphi)(c)=(\varphi \circ \partial_{q})(c)=\varphi(\partial_{q}(c))=\varphi(0)=0
+  \end{equation*}
+  よって、$c\in Z_{q}(C)\Rightarrow \varphi(c)\in Z_{q}(C')$が成り立つ。\\
+  また、$a\in B_{q}(C)$をとると、ある$b\in C_{q+1}$があって$a=\partial_{q+1}(b)$を満たすから
+  \begin{equation*}
+    \varphi(a)=\varphi(\partial_{q+1}(b))=(\varphi \circ \partial_{q+1})(b)=(\partial'_{q+1} \circ \varphi)(b)=\partial'_{q+1}(\varphi(b))\in B_{q}(C')
+  \end{equation*}
+  よって、$c\in B_{q}(C)\Rightarrow \varphi(c)\in B_{q}(C')$が成り立つ。\\
+  したがって次数$0$の準同型写像$H_{*}(\varphi) : H_{*}(C)\to H_{*}(C')$が
   \begin{equation*}
     H_{*}(\varphi)([c])=[\varphi(c)]\qquad (c\in Z_{q}(C))
   \end{equation*}
