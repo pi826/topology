@@ -231,10 +231,52 @@ pdfkeywords={}
     H_{*}(\varphi)([c])=[\varphi(c)]\qquad (c\in Z_{q}(C))
   \end{equation*}
   により定義される。$H_{*}(\varphi)$を$\varphi$により\textgt{誘導される準同型写像}といい、しばしば$\varphi_{*}$でかく。
-  明らかに、$H_{*}(1)=1,H_{*}(\varphi \circ \varphi')=H_{*}(\varphi)\circ H_{*}(\varphi')$である。したがって$H_{*}$はチェイン複体とチェイン写像の圏(例3)から次数つき加群と次数$0$の準同型写像の圏(例2(2))への共変関手である。
+  明らかに、$H_{*}(1)=1,H_{*}(\varphi \circ \varphi')=H_{*}(\varphi)\circ H_{*}(\varphi')$である。
+  したがって$H_{*}$はチェイン複体とチェイン写像の圏(例3)から次数つき加群と次数$0$の準同型写像の圏(例2(2))への共変関手である。
   $H_{*}$を\textgt{ホモロジー函手}という。
 \end{tcolorbox}
+\begin{tcolorbox}[title = 例6]
+  チェイン写像$\varphi,\varphi' : C\to C'$がチェインホモトープならば、$\varphi$の$\varphi'$へのチェインホモトピー$\Phi$に対し
+  \begin{equation*}
+    \varphi(c)-\varphi'(c)=\partial(\Phi(c))\qquad (c\in Z_{q}(C))
+  \end{equation*}
+  だから、$[\varphi(c)]=[\varphi'(c)]$で、したがって、$H_{*}(\varphi)=H_{*}(\varphi'):H_{*}(C)\to H_{*}(C')$
+  よってホモロジー函手$H_{*}$はまたチェイン複体とチェイン写像のチェインホモトピー類の圏(例4)から次数つき加群と次数$0$の準同型写像の圏への共変函手ともみられる。
+\end{tcolorbox}
 
+\clearpage
+
+\begin{tcolorbox}[title = 例7]
+  位相空間$X$に対し、$X$の弧状連結成分の集合を考え、これより生成される自由加群を$H_{0}(X)$で表す。
+  また、位相空間の間の連続写像$f:X\to Y$に対し、次の条件によって準同型写像$H_{0}(f):H_{0}(X)\to H_{0}(Y)$
+  を定義する。$X$の弧状連結成分$X_{\lambda}$に対し、$H_{0}(f)(X_{\lambda})$は$f(X_{\lambda})$を含む$Y$の弧状連結成分を表す。
+  明らかに連続写像$f,g:X\to Y$がホモトープならば$H_{0}(f)=H_{0}(g)$\\
+  $H_{0}$は位相空間と連続写像の圏、または位相空間と連続写像のホモトピー類の圏(例1)から加群の圏への共変函手である。
+\end{tcolorbox}
+また、函手の定義から函手は同型を保存することがわかる。
+
+\subsection{特異ホモロジー}
+$q$次元Euclid空間を$\mathbf{R}^q$で表し、その原点を$P_0$,第$i$軸上の単位点を$P_i$で表す($i=1,2,\cdots,q$)
+$P_{0},P_{1},\cdots,P_{q}$で張られる$q$次元単体を$\Delta^q$で表し、\textgt{標準$q$単体}という。$\Delta^1=[0,1]$である。
+%---------q単体の図をかく---------%
+
+
+
+
+%--------------------------------%
+$q\geq 1$と$i=0,1,\cdots,q$に対し、
+\begin{equation*}
+  \varepsilon^{i}_{q}:\Delta^{q-1}\to \Delta^{q}
+\end{equation*}
+によって
+\begin{equation*}
+  \varepsilon^{i}_{q}(P_{j})=\left\{
+    \begin{alignedat}{2}
+      &P_{j}\quad &(j<i)\\
+      &P_{j+1}\quad &(j\geq i)
+    \end{alignedat} 
+  \right.
+\end{equation*}
 
 
 \end{document}
