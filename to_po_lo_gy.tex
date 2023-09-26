@@ -81,11 +81,11 @@ pdfkeywords={}
 圏の定義は略。\\
 圏の例をすこしあげる。
 \begin{tcolorbox}[title = 例1]
-  位相空間$X$から位相空間$Y$への写像の族$f_{i}:X\to Y$に対し、写像$F:X\times [0,1] \to Y$を
+  位相空間$X$から位相空間$Y$への写像の族$f_{t}:X\to Y$に対し、写像$F:X\times [0,1] \to Y$を
   \begin{equation*}
-    F(x,t)=f_{i}(x)\qquad (x\in X,t \in [0,1])
+    F(x,t)=f_{t}(x)\qquad (x\in X,t \in [0,1])
   \end{equation*}
-  で定義するとき、$F$が連続ならば写像族$\{f_i\}$を$f_0$から$f_1$への\textgt{ホモトピー}(homotopy)という。\\
+  で定義するとき、$F$が連続ならば写像族$\{f_t\}$を$f_0$から$f_1$への\textgt{ホモトピー}(homotopy)という。\\
   連続写像$f,f':X\to Y$に対し、$f$から$f'$へのホモトピーが存在するとき$f$は$f'$に\textgt{ホモトープ}(homotop)
   であるといい、$f\simeq f':X\to Y$で表す。\\
   ホモトープという関係は同値関係となる。\\
@@ -109,10 +109,22 @@ pdfkeywords={}
   \end{equation*}
   である。($\{g\circ f_{t}\}$が$g\circ f$から$g\circ f'$へのホモトピーを与え、$\{g_{t}\circ f'\}$が$g\circ f'$から$g'\circ f'$へのホモトピーを与える。)\\
   すなわち、ホモトープな連続写像の合成はホモトープである。\\
-  よって、対象を位相空間とし、射を連続者像のホモトピー類で定義することにより、1つの圏が得られる。
+  よって、対象を位相空間とし、射を連続写像のホモトピー類で定義することにより、1つの圏が得られる。
 \end{tcolorbox}
 
 \clearpage
+
+\begin{tcolorbox}[title = ホモトープな例,colbacktitle = lime!80!black]
+  $X=\mathbf{R},Y=\mathbf{R}^2$とし、それぞれ通常の位相を入れる。そして、$f,g:X\to Y$を
+  \begin{equation*}
+    f(x)=(x,0),\qquad g(x)=(x,1)
+  \end{equation*}
+  で定義する。そして、$F:X\times [0,1]\to Y$を
+  \begin{equation*}
+    F(x,t)=(x,t)
+  \end{equation*}
+  で定義すれば、$F(x,0)=f(x),F(x,1)=g(x)$となり、位相空間論の知識より$F,f,g$は連続なので$f,g$はホモトープである。
+\end{tcolorbox}
 
 加群,加群の準同型写像の定義は略。$R$加群、$R$準同型写像を単に加群、準同型写像という。
 簡単のため$R$を可換環と仮定する。可換性が必要がない場面もある。
