@@ -274,9 +274,45 @@ $q\geq 1$と$i=0,1,\cdots,q$に対し、
     \begin{alignedat}{2}
       &P_{j}\quad &(j<i)\\
       &P_{j+1}\quad &(j\geq i)
-    \end{alignedat} 
+    \end{alignedat}
   \right.
 \end{equation*}
+なる線型写像を表す。定義より明らかに
+\begin{equation}
+  \varepsilon^{j}_{q+1} \circ \varepsilon^{i}_{q}=\varepsilon^{i}_{q+1}\circ \varepsilon^{j-1}_{q}\quad (i<j)
+\end{equation}
+が成り立つ。\\
+位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}という($q\geq 0$)
+$q>0$のとき、各$i=0,1,\cdots,q$に対し、特異$q-1$単体$\sigma \circ \varepsilon^{i}_{q} : \Delta^{q-1}\to X$が得られるが、
+これを$d_{i}\sigma$で表し、$\sigma$の\textgt{第$i$面}という。\\
+いま、単位元$1$をもつ可換環$R$が与えられたとする。このとき次数つき加群$S(X)=\{S_{q}(X)\}$を$q\geq 0$ならば
+$S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成される自由加群を表し、$q<0$ならば$S_{q}(X)=0$であるとして
+定義する。さらに次数$-1$の準同型写像$\partial : S(X)\to S(X)$を
+\begin{equation*}
+  \partial_{q}=\left\{
+  \begin{alignedat}{2}
+    &\sum_{i=0}^{q}(-1)^{i}d_{i}\quad &(q>0)\\
+    &0 \quad &(q\leq 0)
+  \end{alignedat}
+  \right.
+\end{equation*}
+によって定義する。ここに$d_{i}:S_{q}(X)\to S_{q-1}(X)$は$\sigma$を$d_{i}\sigma$にうつす準同型写像(これを\textgt{面作用素}という)\\
+(1.1)より明らかに
+\begin{equation}
+  d_{i}\circ d_{j}=d_{j-1}\circ d_{i}\quad (i<j)
+\end{equation}
+したがって
+\begin{align*}
+  \partial_{q}\circ \partial_{q+1}
+  &=\sum_{i,j}(-1)^{i+j}d_{i}\circ d_{j}\\
+  &=\sum_{i<j}(-1)^{i+j}d_{i}\circ d_{j} + \sum_{i\geq j}(-1)^{i+j}d_{i}\circ d_{j}\\
+  &=\sum_{i<j}(-1)^{i+j}d_{j-1}\circ d_{i} + \sum_{i\geq j}d_{i}\circ d_{j}\\
+  &=\sum_{i\leq j}(-1)^{i+j+1}d_{j}\circ d_{i} + \sum_{i\leq j}(-1)^{i+j}d_{j}\circ d_{i}\\
+  &=0
+\end{align*}
+よって$S(X)$は$\partial$をバウンダリ作用素としてチェイン複体である。\\
+これを(Rに係数をもつ)\textgt{$X$の特異チェイン複体}という。
+
 
 
 \end{document}
