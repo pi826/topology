@@ -244,8 +244,6 @@ pdfkeywords={}
   よってホモロジー函手$H_{*}$はまたチェイン複体とチェイン写像のチェインホモトピー類の圏(例4)から次数つき加群と次数$0$の準同型写像の圏への共変函手ともみられる。
 \end{tcolorbox}
 
-\clearpage
-
 \begin{tcolorbox}[title = 例7]
   位相空間$X$に対し、$X$の弧状連結成分の集合を考え、これより生成される自由加群を$H_{0}(X)$で表す。
   また、位相空間の間の連続写像$f:X\to Y$に対し、次の条件によって準同型写像$H_{0}(f):H_{0}(X)\to H_{0}(Y)$
@@ -254,6 +252,8 @@ pdfkeywords={}
   $H_{0}$は位相空間と連続写像の圏、または位相空間と連続写像のホモトピー類の圏(例1)から加群の圏への共変函手である。
 \end{tcolorbox}
 また、函手の定義から函手は同型を保存することがわかる。
+
+\clearpage
 
 \subsection{特異ホモロジー}
 $q$次元Euclid空間を$\mathbf{R}^q$で表し、その原点を$P_0$,第$i$軸上の単位点を$P_i$で表す($i=1,2,\cdots,q$)
@@ -277,12 +277,11 @@ $q\geq 1$と$i=0,1,\cdots,q$に対し、
     \end{alignedat}
   \right.
 \end{equation*}
-なる線型写像を表す。定義より明らかに
+なる線型写像を表す。場合分けにより容易に確認できるが次が成り立つ。
 \begin{equation}
   \varepsilon^{j}_{q+1} \circ \varepsilon^{i}_{q}=\varepsilon^{i}_{q+1}\circ \varepsilon^{j-1}_{q}\quad (i<j)
 \end{equation}
-が成り立つ。\\
-位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}(singular q-simplex)という($q\geq 0$)
+位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}(singular q-simplex)という($q\geq 0$).
 $q>0$のとき、各$i=0,1,\cdots,q$に対し、特異$q-1$単体$\sigma \circ \varepsilon^{i}_{q} : \Delta^{q-1}\to X$が得られるが、
 これを$d_{i}\sigma$で表し、$\sigma$の\textgt{第$i$面}(i-face?)という。\\
 いま、単位元$1$をもつ可換環$R$が与えられたとする。このとき次数つき加群$S(X)=\{S_{q}(X)\}$を$q\geq 0$ならば
@@ -312,7 +311,60 @@ $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成され�
 \end{align*}
 よって$S(X)$は$\partial$をバウンダリ作用素としてチェイン複体である。\\
 これを(Rに係数をもつ)\textgt{$X$の特異チェイン複体}(singular chain complex)という。\\
+$f:X\to Y$を位相空間の間の連続写像とする。このとき$X$の任意の特異$q$単体$\sigma : \Delta^q \to X$
+に対し、合成$f\circ \sigma : \Delta^q \to Y$は$Y$の特異$q$単体である。明らかに
+\begin{equation*}
+  d_{i}(f\circ \sigma)=f\circ (d_{i}\sigma)
+\end{equation*}
+したがってチェイン写像$S(f):S(x)\to S(Y)$が$\sigma$を$f\circ \sigma$にうつすことによって定義される。
+$S$は位相空間と連続写像の圏からチェイン複体とチェイン写像の圏への共変函手であることが容易に示される。$S$を\textgt{特異チェイン函手}という。\\
+なお、$S(f)$をしばしば$f_{\sharp}$で表す。\\
+特異チェイン複体$S(X)$のホモロジー群$H_{*}(S(X))=\{H_{q}(S(X))\}$を$H_{*}(X)=\{H_{q}(X)\}$で表し、位相空間$X$の\textgt{(特異)ホモロジー群}という。また、
+連続写像$f:X\to Y$に対し、チェイン写像$S(f)$より誘導される準同型写像$S(f)_{*}:H_{*}(X)\to H_{*}(Y)$を$f_{*}$で表し、
+$f$より\textgt{誘導される準同型写像}という。\\
+基礎環$R$を明示するときは、$H_{*}(X)$は$H_{*}(X;R)$と書かれ、$R$に\textgt{係数をもつホモロジー群}とよばれる。\\
+いま、位相空間と連続写像の圏から次数つき加群と次数$0$の準同型写像の圏への共変函手が位相空間$X$に$H_{*}(X)$を、
+連続写像$f:X\to Y$に$f_{*}:H_{*}(X)\to H_{*}(Y)$を対応されることにより得られるが、これを\textgt{特異ホモロジー函手}という。\\
+定義より明らかに
+\begin{equation*}
+  H_{q}(X)=0\quad (q<0)
+\end{equation*}
+$H_{0}(X)$を考えよう。特異$0$単体$\sigma : \Delta^{0}\to X$はその像$\sigma(\Delta^{0})$によって定まる。
+したがって$X$の特異$0$単体は$X$の点と同一視してよい。定義より明らかに、すべての特異$0$単体はサイクルであり、これらの$2$つ$x,x'\in X$は同一の弧状連結成分に
+属しているときしかもそのときに限り同一のホモロジー類を代表する。したがって$0$ホモロジー群$H_{0}(X)$は$X$の弧状連結成分の集合によって生成される自由加群である。
+さらに、連続写像$f:X\to Y$に対し$S(f)(x)=f(x)\ (x\in X)$だから、$f_{*}:H_{0}(X)\to H_{0}(Y)$は$X$の弧状連結成分$X_{\lambda}$を$f(X_{\lambda})$を含む$Y$の弧状連結成分にうつす。\\
 
+\begin{tcolorbox}[title = 補題1,upperbox = visible]
+  $X$を位相空間とし、$i_{0},i_{1}:X\to X\times [0,1]$を
+  \begin{equation*}
+    i_{0}(x)=(x,0),\quad i_{1}(x)=(x,1)\quad (x\in X)
+  \end{equation*}
+  で与えられる連続写像とする。このときチェイン写像$i_{0\sharp},i_{1\sharp}:S(X)\to S(X\times [0,1])$はチェインホモトープである。
+  \tcblower
+  \textgt{証明}\\
+  各$q\geq 0$と各$i=0,1,\cdots,q$に対し、
+  \begin{equation*}
+    \theta_{q+1}^{\, i}:\Delta^{q+1}\to \Delta^{q}\times [0,1]
+  \end{equation*}
+  によって
+  \begin{equation*}
+    \theta_{q+1}^{\, i}(P_{j})=\left\{
+      \begin{alignedat}{2}
+        &(P_{j},0)\quad &(j\leq i)\\
+        &(P_{j-1},1)\quad &(j>i)
+      \end{alignedat}
+    \right.
+  \end{equation*}
+  なる線型写像を表す。\\
+  $X$の各特異$q$単体$\sigma : \Delta^{q}\to X$に対し、$X\times [0,1]$の特異$q+1$単体
+  \begin{center}
+    \begin{tikzpicture}[auto]
+      \node (a) at (0,1.2) {$\Delta^{q+1}$}; \node (b) at (3.0,1.2) {$\Delta^{q}\times [0,1]$}; \node (c) at (6.0,1.2) {$X\times [0,1]$};
+      
+      \draw[->] (a) to node {$\theta_{q+1}^{\, i}$} (b); \draw[->] (b) to node {$\sigma \times 1$} (c);
+    \end{tikzpicture}
+  \end{center}
+\end{tcolorbox}
 
 
 
