@@ -102,7 +102,7 @@ pdfkeywords={}
     \right.
   \end{equation*}
   で与えられる。\\
-  上の同値類を連続写像の\textgt{ホモトピー類}(えいやくだれか教えて)という。\\
+  上の同値類を連続写像の\textgt{ホモトピー類}(homotopy class)という。\\
   明らかに$f\simeq f':X\to Y$で$g\simeq g':Y\to Z$ならば\\
   \begin{equation*}
     g\circ f\simeq g\circ f'\simeq g'\circ f'\simeq g'\circ f:X \to Z
@@ -189,10 +189,10 @@ pdfkeywords={}
   \begin{equation*}
     \partial \circ \Phi + \Phi \circ \partial = \varphi - \varphi'
   \end{equation*}
-  が成り立つとき、$\varphi$は$\varphi'$への\textgt{チェインホモトープ}であるといい、$\varphi \simeq \varphi' : C\to C'$で表す。
-  $\Phi$を$\varphi$の$\varphi'$への\textgt{チェインホモトピー}という。\\
+  が成り立つとき、$\varphi$は$\varphi'$への\textgt{チェインホモトープ}(chain homotopic)であるといい、$\varphi \simeq \varphi' : C\to C'$で表す。
+  $\Phi$を$\varphi$の$\varphi'$への\textgt{チェインホモトピー}(chain homotopy)という。\\
   チェインホモトープという関係は$C$から$C'$へのチェイン写像の集合における同値関係である。(あとで証明を追加したい。)
-  この同値類を\textgt{チェインホモトピー類}という。\\
+  この同値類を\textgt{チェインホモトピー類}(chain homotopy class)という。\\
   $\varphi\simeq \varphi' : C\to C'$で$\psi \simeq \psi' :C' \to C''$ならば、$\psi \circ \varphi \simeq \psi' \circ \varphi' : C\to C''$
   である。実際、$\Phi$を$\varphi$から$\varphi'$への、$\Psi$を$\psi$から$\psi'$へのチェインホモトピーとするとき
   \begin{equation*}
@@ -201,8 +201,8 @@ pdfkeywords={}
   は$\psi \circ \varphi$から$\psi'\circ \varphi'$へのチェインホモトピーである。\\
   よって、チェイン複体を対象とし、チェイン写像のチェインホモトピー類を射とすることにより、1つの圏が得られる。
 \end{tcolorbox}
-同型射、同型、関手の定義は略。例1の圏における同型射、同型はふつう\textgt{ホモトピー同値写像}、\textgt{ホモトピー同値}とよばれている。\\
-例4での同型射を\textgt{チェイン同値写像}という。
+同型射、同型、関手の定義は略。例1の圏における同型射、同型はふつう\textgt{ホモトピー同値写像}(homotopy equivalent map?)、\textgt{ホモトピー同値}(homotopy equivalent)とよばれている。\\
+例4での同型射を\textgt{チェイン同値写像}(chain equivalent map?)という。
 \begin{tcolorbox}[title = 例5]
   $C$をチェイン複体とする。
   \begin{equation*}
@@ -212,9 +212,9 @@ pdfkeywords={}
   \begin{equation*}
     H_{q}(C)=Z_{q}(C)/B_{q}(C)
   \end{equation*}
-  を$C$の\textgt{$q$ホモロジー群}といい、次数つき加群$H_{*}(C)=\{H_{q}(C)\}$を$C$の\textgt{ホモロジー群}という。
-  $C_q$の元を$C$の\textgt{$q$チェイン}。$Z_{q}(C)$の元を\textgt{$q$サイクル}。$B_{q}(C)$の元を\textgt{$q$バウンダリ}といい、
-  $c\in Z_{q}(C)$で代表される$H_{q}(C)$の元を$[c]$で表して、$c$の\textgt{ホモロジー類}という。\\
+  を$C$の\textgt{$q$ホモロジー群}(q-homology group?)といい、次数つき加群$H_{*}(C)=\{H_{q}(C)\}$を$C$の\textgt{ホモロジー群}(homology groups)という。
+  $C_q$の元を$C$の\textgt{$q$チェイン}(q-chain?)。$Z_{q}(C)$の元を\textgt{$q$サイクル}(q-cycle?)(。$B_{q}(C)$の元を\textgt{$q$バウンダリ}(q-boundary?)といい、
+  $c\in Z_{q}(C)$で代表される$H_{q}(C)$の元を$[c]$で表して、$c$の\textgt{ホモロジー類}(homology class)という。\\
   チェイン写像$\varphi : C\to C'$は$C$の$q$サイクル、$q$バウンダリを$C'$の$q$サイクル、$q$バウンダリに移す。
   実際、$c\in Z_{q}(C)=\text{Ker}\, \partial_{q}$をとると、$\partial_{q}(c)=0$だから
   \begin{equation*}
@@ -230,10 +230,10 @@ pdfkeywords={}
   \begin{equation*}
     H_{*}(\varphi)([c])=[\varphi(c)]\qquad (c\in Z_{q}(C))
   \end{equation*}
-  により定義される。$H_{*}(\varphi)$を$\varphi$により\textgt{誘導される準同型写像}といい、しばしば$\varphi_{*}$でかく。
+  により定義される。$H_{*}(\varphi)$を$\varphi$により\textgt{誘導される準同型写像}(induced homomorphism?)といい、しばしば$\varphi_{*}$でかく。
   明らかに、$H_{*}(1)=1,H_{*}(\varphi \circ \varphi')=H_{*}(\varphi)\circ H_{*}(\varphi')$である。
   したがって$H_{*}$はチェイン複体とチェイン写像の圏(例3)から次数つき加群と次数$0$の準同型写像の圏(例2(2))への共変関手である。
-  $H_{*}$を\textgt{ホモロジー函手}という。
+  $H_{*}$を\textgt{ホモロジー函手}(homology functor)という。
 \end{tcolorbox}
 \begin{tcolorbox}[title = 例6]
   チェイン写像$\varphi,\varphi' : C\to C'$がチェインホモトープならば、$\varphi$の$\varphi'$へのチェインホモトピー$\Phi$に対し
@@ -257,7 +257,7 @@ pdfkeywords={}
 
 \subsection{特異ホモロジー}
 $q$次元Euclid空間を$\mathbf{R}^q$で表し、その原点を$P_0$,第$i$軸上の単位点を$P_i$で表す($i=1,2,\cdots,q$)
-$P_{0},P_{1},\cdots,P_{q}$で張られる$q$次元単体を$\Delta^q$で表し、\textgt{標準$q$単体}という。$\Delta^1=[0,1]$である。
+$P_{0},P_{1},\cdots,P_{q}$で張られる$q$次元単体を$\Delta^q$で表し、\textgt{標準$q$単体}(standard q-simplex)という。$\Delta^1=[0,1]$である。
 %---------q単体の図をかく---------%
 
 
@@ -282,9 +282,9 @@ $q\geq 1$と$i=0,1,\cdots,q$に対し、
   \varepsilon^{j}_{q+1} \circ \varepsilon^{i}_{q}=\varepsilon^{i}_{q+1}\circ \varepsilon^{j-1}_{q}\quad (i<j)
 \end{equation}
 が成り立つ。\\
-位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}という($q\geq 0$)
+位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}(singular q-simplex)という($q\geq 0$)
 $q>0$のとき、各$i=0,1,\cdots,q$に対し、特異$q-1$単体$\sigma \circ \varepsilon^{i}_{q} : \Delta^{q-1}\to X$が得られるが、
-これを$d_{i}\sigma$で表し、$\sigma$の\textgt{第$i$面}という。\\
+これを$d_{i}\sigma$で表し、$\sigma$の\textgt{第$i$面}(i-face?)という。\\
 いま、単位元$1$をもつ可換環$R$が与えられたとする。このとき次数つき加群$S(X)=\{S_{q}(X)\}$を$q\geq 0$ならば
 $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成される自由加群を表し、$q<0$ならば$S_{q}(X)=0$であるとして
 定義する。さらに次数$-1$の準同型写像$\partial : S(X)\to S(X)$を
@@ -296,7 +296,7 @@ $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成され�
   \end{alignedat}
   \right.
 \end{equation*}
-によって定義する。ここに$d_{i}:S_{q}(X)\to S_{q-1}(X)$は$\sigma$を$d_{i}\sigma$にうつす準同型写像(これを\textgt{面作用素}という)\\
+によって定義する。ここに$d_{i}:S_{q}(X)\to S_{q-1}(X)$は$\sigma$を$d_{i}\sigma$にうつす準同型写像(これを\textgt{面作用素}(英訳がわからない)という)\\
 (1.1)より明らかに
 \begin{equation}
   d_{i}\circ d_{j}=d_{j-1}\circ d_{i}\quad (i<j)
@@ -311,7 +311,9 @@ $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成され�
   &=0
 \end{align*}
 よって$S(X)$は$\partial$をバウンダリ作用素としてチェイン複体である。\\
-これを(Rに係数をもつ)\textgt{$X$の特異チェイン複体}という。
+これを(Rに係数をもつ)\textgt{$X$の特異チェイン複体}(singular chain complex)という。\\
+
+
 
 
 
