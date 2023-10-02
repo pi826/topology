@@ -29,6 +29,8 @@ pdfkeywords={}
 \usepackage{pxjahyper}
 \usepackage{tikz}
 \usetikzlibrary{intersections,calc,arrows.meta}
+\usepackage[truedimen,top=25truemm,bottom=30truemm,hmargin=25truemm]{geometry}
+\usepackage{calc}
 
 
 \begin{document}
@@ -64,6 +66,33 @@ pdfkeywords={}
 
 \theoremstyle{remark}
 \newtheorem*{rem*}{Remark}
+
+% \setlength{\topmargin}{-20truemm}
+% \setlength{\headheight}{0pt}
+% \setlength{\headsep}{0pt}
+\setlength{\footskip}{20truemm}
+
+
+% \setlength{\@tempdima}{1pt*\ratio{\dimexpr\textheight/\@lines}{\baselineskip}}
+% \renewcommand{\baselinestretch}{\strip@pt\@tempdima}\selectfont
+
+\makeatletter
+\newcount\@chars\newcount\@lines
+\@chars=40                      % 1行の文字数
+\@lines=40                      % 1ページの行数
+
+\newdimen\@kanjiskip
+\@kanjiskip=\dimexpr(\textwidth-1zw*\@chars)/\numexpr\@chars-1
+\newdimen\@@kanjiskip
+\@@kanjiskip=\dimexpr\@kanjiskip/10
+
+\baselineskip=\dimexpr\textheight/\@lines
+\kanjiskip=\@kanjiskip plus \@@kanjiskip minus \@@kanjiskip
+\parindent=\dimexpr 1zw+2truept
+\parindent=\dimexpr\parindent+\@kanjiskip
+\makeatother
+
+% ↑は貼り付けただけなのでわからない。
 
 \title{位相幾何}
 \date{}
@@ -316,7 +345,7 @@ $f:X\to Y$を位相空間の間の連続写像とする。このとき$X$の任�
 \begin{equation*}
   d_{i}(f\circ \sigma)=f\circ (d_{i}\sigma)
 \end{equation*}
-したがってチェイン写像$S(f):S(x)\to S(Y)$が$\sigma$を$f\circ \sigma$にうつすことによって定義される。
+したがってチェイン写像$S(f):S(X)\to S(Y)$が$\sigma$を$f\circ \sigma$にうつすことによって定義される。
 $S$は位相空間と連続写像の圏からチェイン複体とチェイン写像の圏への共変函手であることが容易に示される。$S$を\textgt{特異チェイン函手}という。\\
 なお、$S(f)$をしばしば$f_{\sharp}$で表す。\\
 特異チェイン複体$S(X)$のホモロジー群$H_{*}(S(X))=\{H_{q}(S(X))\}$を$H_{*}(X)=\{H_{q}(X)\}$で表し、位相空間$X$の\textgt{(特異)ホモロジー群}という。また、
@@ -364,9 +393,46 @@ $H_{0}(X)$を考えよう。特異$0$単体$\sigma : \Delta^{0}\to X$はその�
       \draw[->] (a) to node {$\theta_{q+1}^{\, i}$} (b); \draw[->] (b) to node {$\sigma \times 1$} (c);
     \end{tikzpicture}
   \end{center}
+  を$D_{i}\sigma$で表し、準同型写像$D_{i}: S_{q}(X)\to S_{q+1}(X\times [0,1])$は$\sigma$を$D_{i}\sigma$にうつすものと定義しよう。容易に
+  \begin{align}
+    \begin{alignedat}{2}
+      &d_{0}\circ D_{0}=i_{1\sharp},\quad d_{q+1}\circ D_{q}=i_{0\sharp},\quad d_{i}\circ D_{i}=d_{i}\circ D_{i-1}\\
+      &d_{i}\circ D_{j}=D_{j-1}\circ d_{i}\quad (j>i),\quad d_{i}\circ D_{j}=D_{j}\circ d_{i-1}\quad (j+1<i) 
+    \end{alignedat}
+  \end{align}
+  が成り立つことがわかる。\\
+  いま、次数$+1$の準同型写像$\Phi : S(X)\to S(X\times [0,1])$を
+  \begin{equation*}
+    \Phi_{q}=\sum_{i=0}^{q}(-1)^{i}D_{i}
+  \end{equation*}
+  によって定義すれば、(1.3)より$\Phi$は$i_{1\sharp}$から$i_{0\sharp}$へのチェインホモトピーであることがわかる。実際、
+  \begin{align*}
+    \partial_{q+1}\circ \Phi_{q}
+    &=\sum_{i,j}(-1)^{i+j}d_{i}\circ D_{j}\\
+    &=(\sum_{i<j}(-1)^{i+j}d_{i}\circ D_{j})+(\sum_{i}d_{i}\circ D_{i}-\sum_{i}d_{i}\circ D_{i-1})+(\sum_{i>j+1}(-1)^{i+j}d_{i}\circ D_{j})\\
+    &=(\sum_{i<j}(-1)^{i+j}D_{j-1}\circ d_{i})+(d_{0}\circ D_{0}-d_{q+1}\circ D_{q})+(\sum_{i>j+1}(-1)^{i+j}D_{j}\circ d_{i-1})\\
+    &=(\sum_{i\leq j}(-1)^{i+j+1}D_{j}\circ d_{i})+(i_{1\sharp}-i_{0\sharp})+(\sum_{i>j}(-1)^{i+j+1}D_{j}\circ d_{i})\\
+    &=\sum_{i,j}(-1)^{i+j+1}D_{j}\circ d_{i}+(i_{1\sharp}-i_{0\sharp})\\
+    &=-\Phi_{q-1}\circ \partial_{q}+(i_{1\sharp}-i_{0\sharp})
+  \end{align*}
 \end{tcolorbox}
 
+\clearpage
 
+\begin{tcolorbox}[title = 定理1,upperbox = visible]
+  $X,Y$を位相空間とし、$f_{0},f_{1}:X\to Y$をホモトープな連続写像とする。このときチェイン写像$f_{0\sharp},f_{1\sharp}:S(X)\to S(Y)$はチェインホモトープで、したがって
+  \begin{equation*}
+    f_{0*}=f_{1*}:H_{*}(X)\to H_{*}(Y)
+  \end{equation*}
+  \tcblower
+  \textgt{証明}\\
+  $F:X\times [0,1]\to Y$を$f_{0}$から$f_{1}$へのホモトピーとする。上の補題の
+  $i_{0},i_{1}:X\to X\times [0,1]$に対し、$F\circ i_{0}=f_{0},\ F\circ i_{1}=f_{1}$
+  が成り立つ。したがって補題1により
+  \begin{equation*}
+    f_{0\sharp}=F_{\sharp}\circ i_{0\sharp}\simeq F_{\sharp}\circ i_{1\sharp}=f_{1\sharp}
+  \end{equation*}
+\end{tcolorbox}
 
 
 \end{document}
