@@ -433,6 +433,46 @@ $H_{0}(X)$を考えよう。特異$0$単体$\sigma : \Delta^{0}\to X$はその�
     f_{0\sharp}=F_{\sharp}\circ i_{0\sharp}\simeq F_{\sharp}\circ i_{1\sharp}=f_{1\sharp}
   \end{equation*}
 \end{tcolorbox}
+$C,C'$は次数つき加群で、各$q$に対し$C'_{q}$は$C_{q}$の部分加群のとき、$C'$を次数つき加群$C$の\textgt{部分加群}という。$C'$がチェイン複体で、さらに各$q$に対し$\partial_{q}(C'_{q})\subset C'_{q-1}$が成り立つならば、$C'$をチェイン複体$C$の\textgt{部分複体}という。
+部分複体はそれ自身チェイン複体である。
+$C$を$R$上のチェイン複体とする。$q<0$ならば$C_{q}=0$であり、また次の2条件を満たす準同型写像$\varepsilon : C_{0}\to R$が与えられているとき、$C$を\textgt{添加(チェイン)複体}といい、$\varepsilon$を\textgt{添加写像}という。
+\begin{itemize}
+  \item[(1)] $\varepsilon$は全射(すなわち$\mathrm{Im}\, \varepsilon = R$)
+  \item[(2)] $\varepsilon \circ \partial_{1} : C_{1}\to R$は$0$写像(すなわち$\varepsilon \circ \partial_{1}$はすべての元を$0$にうつす。)
+\end{itemize}
+明らかに$\varepsilon$により準同型写像$\varepsilon_{*} : H_{0}(C)\to R$が定義され、これは全射である。また、$C$の部分複体$\widetilde{C}$が、
+\begin{equation*}
+  \widetilde{C}_{q}=C_{q}\quad (q\neq 0),\qquad \widetilde{C}_{0}=\mathrm{Ker}\, \varepsilon
+\end{equation*}
+により定義される。$\widetilde{C}$を添加複体$C$の\textgt{被約複体}といい、$\widetilde{C}$のホモロジー群を$\widetilde{H}_{*}(C)$で表して、$C$の\textgt{被約ホモロジー群}という。
+明らかに
+\begin{equation*}
+  \widetilde{H}_{q}(C)=H_{q}(C)\quad (q\neq 0)\qquad \widetilde{H}_{0}(C)=\mathrm{Ker}\, \varepsilon_{*}
+\end{equation*}
+$C,D$が添加複体のとき、チェイン写像$\varphi : C\to D$に対しては$\varepsilon \circ \varphi = \varepsilon$を要請するものとする。
+したがって$\varphi$は準同型写像$\varphi_{*} : \widetilde{H}_{q}(C)\to \widetilde{H}_{q}(D)$を誘導する。\\
+$A,B$を$R$加群とする。$\mathrm{Abel}$群としての直和$A\oplus B$において
+\begin{equation*}
+  r(a,b)=(ra,rb)\quad (r\in R,\ a\in A,\ b\in B)
+\end{equation*}
+と定義すれば、$A\oplus B$は$R$加群となる。これを加群$A,B$の直和という。\\
+加群としての同型
+\begin{equation*}
+  H_{0}(C)\simeq \widetilde{H}_{0}(C)\oplus R
+\end{equation*}
+
+が成り立つ。実際、$a_{0}\in H_{0}(C)$を$\varepsilon_{*}(a_{0})=1$なる元とするとき、$a\in H_{0}(C)$を\\
+$(a-\varepsilon_{*}(a)a_{0},\varepsilon_{*}(a))\in \widetilde{H}_{0}(C)\oplus R$にうつす写像は同型写像である。\\
+添加チェイン複体$C$は$\widetilde{H}_{*}(C)=0$を満たすとき\textgt{非輪状}とよばれる。
+
+\clearpage
+
+$R$を$R_{0}=R,\ R_{q}=0(q\neq 0)$なるチェイン複体とみなす。このとき、添加複体$C$の添加写像$\varepsilon : C_{0}\to R$は
+チェイン写像$\varepsilon : C\to R$と考えられる。容易に示されるように、これがチェイン同値写像ならば$C$は非輪状である。\\
+位相空間$X$が空集合$\varnothing$でないとき、その特異チェイン複体$S(X)$に対し添加写像$\varepsilon : S(X)\to R$が、
+$X$の各特異$0$単体$x$に対し$\varepsilon(x)=1$とすることにより定義され、$S(X)$は添加複体となる。今後、$S(X)$をこのような添加チェイン複体とみなし、
+$S(X)$の被約ホモロジー群を$\widetilde{H}_{*}(X)$で表す。
+
 
 
 \end{document}
