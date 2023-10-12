@@ -313,7 +313,7 @@ $q\geq 1$と$i=0,1,\cdots,q$に対し、
   \varepsilon^{j}_{q+1} \circ \varepsilon^{i}_{q}=\varepsilon^{i}_{q+1}\circ \varepsilon^{j-1}_{q}\quad (i<j)
 \end{equation}
 位相空間$X$が与えられたとき、任意の連続写像$\sigma : \Delta^{q}\to X$を$X$の\textgt{特異$q$単体}(singular q-simplex)という($q\geq 0$).\ 
-$q>0$のとき、各$i=0,1,\cdots,q$に対し、特異$q-1$単体$\sigma \circ \varepsilon^{i}_{q} : \Delta^{q-1}\to X$が得られるが、
+$q>0$のとき、各$i=0,1,\cdots,q$に対し、特異$q-1$単体$\sigma \circ \varepsilon^{i}_{q} : \Delta^{q-1}\to X$が得られるが、(これが連続であることは有限次元線型空間上の線型写像は連続であることから従う。)
 これを$d_{i}\sigma$で表し、$\sigma$の\textgt{第$i$面}(i-face?)という。\\
 いま、単位元$1$をもつ可換環$R$が与えられたとする。このとき次数つき加群$S(X)=\{S_{q}(X)\}$を$q\geq 0$ならば
 $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成される自由加群を表し、$q<0$ならば$S_{q}(X)=0$であるとして
@@ -334,10 +334,10 @@ $S_{q}(X)$は$X$のすべての特異$q$単体の集合によって生成され�
 したがって
 \begin{align*}
   \partial_{q}\circ \partial_{q+1}
-  &=\sum_{i,j}(-1)^{i+j}d_{i}\circ d_{j}\\
-  &=\sum_{i<j}(-1)^{i+j}d_{i}\circ d_{j} + \sum_{i\geq j}(-1)^{i+j}d_{i}\circ d_{j}\\
-  &=\sum_{i<j}(-1)^{i+j}d_{j-1}\circ d_{i} + \sum_{i\geq j}d_{i}\circ d_{j}\\
-  &=\sum_{i\leq j}(-1)^{i+j+1}d_{j}\circ d_{i} + \sum_{i\leq j}(-1)^{i+j}d_{j}\circ d_{i}\\
+  &=\sum_{i=0}^{q}\sum_{j=0}^{q+1}(-1)^{i+j}d_{i}\circ d_{j}\\
+  &=\sum_{i<j\leq q+1}(-1)^{i+j}d_{i}\circ d_{j} + \sum_{q\geq i\geq j}(-1)^{i+j}d_{i}\circ d_{j}\\
+  &=\sum_{i<j\leq q+1}(-1)^{i+j}d_{j-1}\circ d_{i} + \sum_{q\geq i\geq j}(-1)^{i+j}d_{i}\circ d_{j}\\
+  &=\sum_{i\leq j\leq q}(-1)^{i+j+1}d_{j}\circ d_{i} + \sum_{i\leq j\leq q}(-1)^{i+j}d_{j}\circ d_{i}\\
   &=0
 \end{align*}
 よって$S(X)$は$\partial$をバウンダリ作用素としてチェイン複体である。\\
@@ -479,11 +479,12 @@ $f$は準同型写像$f_{*}:\widetilde{H}_{*}(X)\to \widetilde{H}_{*}(Y)$を誘�
 \begin{tcolorbox}[title = 補題2,upperbox = visible]
   $P$を一点のみからなる空間とするとき、添加写像$\varepsilon : S(\Gamma)\to R$はチェイン同値写像である。
   \tcblower
-  \textgt{証明}
-  $\sigma_{q}:\delta^{q}\to P$を一意に定まる特異$q$単体とし、次数$0$の準同型写像$\eta : R\to S(P)$および次数$1$の準同型写像$\Phi : S(P)\to S(P)$を
+  \textgt{証明}\\
+  $\sigma_{q}:\Delta^{q}\to P$を一意に定まる特異$q$単体とし、次数$0$の準同型写像$\eta : R\to S(P)$および次数$1$の準同型写像$\Phi : S(P)\to S(P)$を
   \begin{equation*}
     \eta(1)=\sigma_{0},\quad \Phi(\sigma_{q})=\sigma_{q+1}\quad (q=0,1,2,\cdots)
   \end{equation*}
+  により定義する。$\varepsilon \circ \eta = 1$であり、$\Phi$は$\eta \circ \varepsilon$の$1$へのチェインホモトピーであることがわかるから、$\varepsilon$はチェイン同値写像である。
 
 \end{tcolorbox}
 
